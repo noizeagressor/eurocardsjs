@@ -1,0 +1,21 @@
+# Библиотеки
+node_modules/
+venv/
+.venv/
+env/
+
+# Сборка и кэш
+.next/
+out/
+build/
+dist/
+__pycache__/
+*.pyc
+
+# Данные и ключи
+.env
+*.db
+*.log
+
+# Инструменты
+cloudflared.exe

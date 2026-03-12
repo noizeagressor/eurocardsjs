@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #bfff00;
+  --color-surface: #0a0c04;
+  --color-surface-alt: #1e230f;
+  --font-display: var(--font-manrope), sans-serif;
+}
+
+body {
+  background-color: #0a0c04;
+  color: #f1f5f9;
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Glass morphism effects */
+.glass-effect {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(30, 35, 15, 0.7);
+  border: 1px solid rgba(191, 255, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.active-glow {
+  box-shadow: 0 0 15px rgba(191, 255, 0, 0.3);
+}
+
+/* Hide scrollbars for carousels */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fallback for devices without backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-effect {
+    background: rgba(30, 35, 15, 0.95);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* Smooth interactions */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Date input styling for dark theme */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
